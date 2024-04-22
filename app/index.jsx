@@ -3,7 +3,9 @@ import { Image, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {images} from '../constants';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import CustomButton from '../components/CustomButton'
 
 export default function App() {
   return ( 
@@ -17,7 +19,7 @@ export default function App() {
         <View className="w-full flex justify-center items-center h-full px-4">
           <Image
             source={images.logo}
-            className="w-[150px] h-[10 4px]"
+            className="w-[130px] h-[84px]"
             resizeMode="contain"
           />
 
@@ -27,16 +29,19 @@ export default function App() {
             resizeMode="contain"
           />
           <View classNam e="relative mt-5">
-            <Text className="text-3xl text-white font-bold text-center">
+            <Text className="text-2xl text-white font-bold text-center">
               Discover Endless{"\n"}
               Possibilities with{" "}
               <Text className="text-secondary-200">Almuse</Text>
             </Text>
+            <View className='flex flex-row justify-center align-center gap-5'>
             <Link href='/home' style={{color: 'white'}}>Go to home</Link>
+            <Link href='/sign-in' style={{color: 'yellow', padding: '1rem'}}>Go to Sign In</Link>
+            </View>
 
             <Image
-              source={images.path} 
-              className="w-[336px] h-[15px] absolute -bottom-0 -right-8"
+              source={images.path}
+              className="w-[136px] h-[15px] absolute -bottom-2 -right-8"
               resizeMode="contain"
             />
           </View>
@@ -53,6 +58,8 @@ export default function App() {
           />
         </View>
       </ScrollView>
+
+      <StatusBar backgroundColor='#161622' style='light'/>
     </SafeAreaView>
   );
 }

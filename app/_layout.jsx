@@ -38,7 +38,7 @@ const RootLayout = () => {
         headerStyle: { backgroundColor: 'tomato' },
       }}
     >
-     <Stack.Screen name='index' options={{ headerShown: false}} />
+     <Stack.Screen name='index' options={{ headerShown: false }} />
     </Stack>
   )
 }
