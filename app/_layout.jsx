@@ -30,13 +30,15 @@ const RootLayout = () => {
   
 
   return (
-    <Stack>
-     <Stack.Screen 
-      name='index' 
-      options={{
-        headerShown: false
-      }} 
-     />
+    <Stack
+      initialRouteName="Home"
+      screenOptions={{
+        headerMode: 'screen',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
+      }}
+    >
+     <Stack.Screen name='index' options={{ headerShown: false}} />
     </Stack>
   )
 }
