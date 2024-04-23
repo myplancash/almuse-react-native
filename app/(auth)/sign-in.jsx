@@ -22,7 +22,7 @@ const SignIn = () => {
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
         <View
-          className="w-full flex justify-center h-full px-4 my-6"
+          className="w-full flex justify-center h-full px-4 my-6 min-h-[85vh   ]"
         >
           <Image
             source={images.logo}
@@ -63,8 +63,8 @@ const SignIn = () => {
             <Link
               href="/sign-up"
               className="text-lg font-psemibold text-secondary"
-            >
-              Signup
+            >  
+              Sign Up
             </Link>
           </View>
         </View>
