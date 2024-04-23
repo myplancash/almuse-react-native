@@ -35,8 +35,6 @@ export default function App() {
               <Text className="text-secondary-200">Almuse</Text>
             </Text>
             <View className='flex flex-row justify-center align-center gap-5'>
-            <Link href='/home' style={{color: 'white'}}>Go to home</Link>
-            <Link href='/sign-in' style={{color: 'yellow', padding: '1rem'}}>Go to Sign In</Link>
             </View>
 
             <Image
