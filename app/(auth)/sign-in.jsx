@@ -15,7 +15,7 @@ const SignIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = (second) => { third }
+
 
 
   return (
@@ -51,7 +51,7 @@ const SignIn = () => {
 
           <CustomButton
             title="Sign In"
-            handlePress={submit}
+            handlePress={() => {}}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />

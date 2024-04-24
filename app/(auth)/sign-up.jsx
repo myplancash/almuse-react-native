@@ -6,6 +6,7 @@ import FormFile from '../../components/FormFile'
 import CustomButton from '../../components/CustomButton'
 import { Link } from 'expo-router'
 import FormField from '../../components/FormFile'
+import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -16,7 +17,9 @@ const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const submit = (second) => { third }
+  const submit = () => {
+    createUser();
+  }
 
 
   return (
