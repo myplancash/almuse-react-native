@@ -1,17 +1,22 @@
-import 'react-native-gesture-handler';
-import { Image, ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from "expo-status-bar";
+import { Redirect, router } from "expo-router";
+import { View, Text, Image, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import {images} from '../constants';
-import { Link, router } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import CustomButton from '../components/CustomButton'
+import { images } from "../constants";
+import { CustomButton, Loader } from "../components";
+import { useGlobalContext } from "../context/GlobalProvider";
 
-export default function App() {
-  return ( 
-  <SafeAreaView className="bg-primary h-full">
-       <ScrollView
-       //so the whoile creen is scrollable the hjeight might be larger, to be able to scroll up and down
+const Welcome = () => {
+  const { loading, isLogged } = useGlobalContext();
+
+  if (!loading && isLogged) return <Redirect href="/home" />;
+
+  return (
+    <SafeAreaView className="bg-primary h-full">
+      <Loader isLoading={loading} />
+
+      <ScrollView
         contentContainerStyle={{
           height: "100%",
         }}
@@ -28,18 +33,17 @@ export default function App() {
             className="max-w-[380px] w-full h-[298px]"
             resizeMode="contain"
           />
-          <View classNam e="relative mt-5">
-            <Text className="text-2xl text-white font-bold text-center">
+
+          <View className="relative mt-5">
+            <Text className="text-3xl text-white font-bold text-center">
               Discover Endless{"\n"}
               Possibilities with{" "}
-              <Text className="text-secondary-200">Almuse</Text>
+              <Text className="text-secondary-100">Almuse</Text>
             </Text>
-            <View className='flex flex-row justify-center align-center gap-5'>
-            </View>
 
             <Image
               source={images.path}
-              className="w-[136px] h-[15px] absolute -bottom-2 -right-8"
+              className="w-[336px] h-[20px] absolute -bottom-5 -right-8"
               resizeMode="contain"
             />
           </View>
@@ -57,7 +61,9 @@ export default function App() {
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor='#161622' style='light'/>
+      <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
-}
+};
+
+export default Welcome;
